@@ -5,7 +5,6 @@ export default function Portfolioo() {
     const [activeSection, setActiveSection] = useState('hero');
     const [menuOpen, setMenuOpen] = useState(false);
     const [projectFilter, setProjectFilter] = useState('All');
-
 const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 const [status, setStatus] = useState({ success: null, message: '' });
 const [loading, setLoading] = useState(false);
@@ -169,6 +168,7 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
                 <div className="nav-logo">
                     MM<span>.</span>
                 </div>
+        
                 <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                     <span className={menuOpen ? 'bar open' : 'bar'}></span>
                     <span className={menuOpen ? 'bar open' : 'bar'}></span>

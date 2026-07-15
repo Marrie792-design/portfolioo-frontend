@@ -1289,33 +1289,57 @@ html, body {
 
 
 @media (max-width: 768px) {
-    /* 👇 '.nav-menu' ki jagah apni actual menu container class lagayein agar mukhtalif hai */
-    .nav-menu, .nav-links.active, .dropdown-menu { 
+    /* 1️⃣ Closed State: Default menu ko hidden aur off-screen rakhein */
+    .nav-menu, .nav-links, .dropdown-menu {
+        display: none !important;              /* By default bilkul gayab */
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: all 0.3s ease-in-out !important;
+    }
+
+    /* 2️⃣ Active State: Jab toggler active ho (state true ho), tabhi center mein show karein */
+    .nav-menu.active, .nav-links.active, .dropdown-menu.active { 
+        display: flex !important;              /* Click par show hoga */
+        opacity: 1 !important;
+        pointer-events: auto !important;
         position: absolute !important;
-        top: 80px !important;                  /* Navbar ki height ke mutabiq adjust karein */
+        top: 80px !important;                  /* Navbar ki height ke mutabiq spacing */
         
-        /* ── Perfect Centering Formula ── */
+        /* ── Perfect Centering ── */
         left: 50% !important;
-        transform: translateX(-50%) !important; /* Menu ko bilkul center mein lock kar dega */
-        right: auto !important;                 /* Purani right/left alignment ko cancel karega */
+        transform: translateX(-50%) !important; /* Menu bilkul beech mein lock */
+        right: auto !important;
         
-        /* ── Width and Spacing ── */
-        width: calc(100% - 40px) !important;    /* Left aur Right dono sides se 20px equal space chorega */
-        max-width: 340px !important;            /* Card ko mobile par bohot bada hone se rokega */
+        /* ── Width and Beautiful Card Design ── */
+        width: calc(100% - 40px) !important;    /* Dono side se 20px equal margin */
+        max-width: 340px !important;            /* Box bohot lamba na ho */
+        background-color: rgba(23, 19, 41, 0.98) !important; /* Solid Dark/Glowy Background */
+        border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Clean subtle border */
+        border-radius: 16px !important;         /* Rounded corners */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Drop shadow */
+        z-index: 9999 !important;               /* Sab cheezon ke upar show ho */
         
         /* ── Inner Alignment ── */
-        display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;         /* Menu ke andar ke links (Home, About...) ko bhi center karega */
+        align-items: center !important;         /* Items center aligned */
         text-align: center !important;
-        padding: 24px !important;               /* Andar ka gap barabar karne ke liye */
+        padding: 24px !important;
         box-sizing: border-box !important;
     }
 
-    /* Menu links ke darmiyan spacing barabar karne ke liye */
-    .nav-menu a, .nav-links a {
+    /* 3️⃣ Menu Links ke darmiyan equal space */
+    .nav-menu.active a, .nav-links.active a {
         width: 100% !important;
-        padding: 12px 0 !important;
+        padding: 14px 0 !important;
         display: block !important;
+        color: #ffffff !important;
+        font-size: 1.1rem !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
+    }
+
+    /* Hover/Active effects for links */
+    .nav-menu.active a:hover, .nav-links.active a:hover {
+        color: #ff9d00 !important;             /* Theme ke mutabiq highlight color */
     }
 }
