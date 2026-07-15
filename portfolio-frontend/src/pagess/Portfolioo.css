@@ -1282,3 +1282,40 @@ html, body {
         display: none; /* Safari and Chrome */
     }
 }
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 👇 '.nav-menu' ki jagah apni actual menu container class lagayein agar mukhtalif hai */
+    .nav-menu, .nav-links.active, .dropdown-menu { 
+        position: absolute !important;
+        top: 80px !important;                  /* Navbar ki height ke mutabiq adjust karein */
+        
+        /* ── Perfect Centering Formula ── */
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Menu ko bilkul center mein lock kar dega */
+        right: auto !important;                 /* Purani right/left alignment ko cancel karega */
+        
+        /* ── Width and Spacing ── */
+        width: calc(100% - 40px) !important;    /* Left aur Right dono sides se 20px equal space chorega */
+        max-width: 340px !important;            /* Card ko mobile par bohot bada hone se rokega */
+        
+        /* ── Inner Alignment ── */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;         /* Menu ke andar ke links (Home, About...) ko bhi center karega */
+        text-align: center !important;
+        padding: 24px !important;               /* Andar ka gap barabar karne ke liye */
+        box-sizing: border-box !important;
+    }
+
+    /* Menu links ke darmiyan spacing barabar karne ke liye */
+    .nav-menu a, .nav-links a {
+        width: 100% !important;
+        padding: 12px 0 !important;
+        display: block !important;
+    }
+}
