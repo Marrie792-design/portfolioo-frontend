@@ -178,7 +178,7 @@ background-color: #1D1A39; /* Fallback deep navy purple */
 }
 
 .nav-logo span {
-  color: var(--accent-primary);
+  color: var(--text-muted);
 }
 
 .nav-menu {
