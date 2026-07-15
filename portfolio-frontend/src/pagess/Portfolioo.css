@@ -853,24 +853,26 @@ section {
 /* Mobile Responsive Adjustments for Projects */
 @media (max-width: 768px) {
     .project-links {
-        display: flex;
-        justify-content: center;  /* 👈 Buttons ko container ke center mein layega */
-        align-items: center;
-        flex-direction: column;   /* 👈 Agar Live Demo aur View Code dono hain, toh unhe upar-neeche stack karega (Best UX) */
-        gap: 12px;                /* Both buttons ke darmiyan gap */
-        width: 100%;
-        margin-top: 20px;         /* Badges se thoda niche space */
+        display: flex !important;             /* Force Flexbox */
+        justify-content: center !important;   /* Centers horizontally */
+        align-items: center !important;       /* Centers vertically */
+        flex-direction: column !important;    /* Stack buttons vertically */
+        gap: 12px !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+        text-align: center !important;        /* Fallback for inline-blocks */
     }
 
     .demo-link, .view-code-link {
-        display: inline-flex;
-        justify-content: center;  /* 👈 Button ke andar likha text center karega */
-        align-items: center;
-        width: 100%;              /* 👈 Button mobile par fully stretch ho sake */
-        max-width: 290px;         /* 👈 Button ko hadd se zyada lamba hone se rokega */
-        padding: 12px 24px;       /* 👈 Ungli se touch karne ke liye perfect size */
-        box-sizing: border-box;
-        text-align: center;
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 290px !important;
+        margin: 0 auto !important;            /* 👈 Super-fallback: Yeh har haal mein button ko center kar ke chorega! */
+        padding: 12px 24px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
     }
 }
 /* --- Contact Section --- */
