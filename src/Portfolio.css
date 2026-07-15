@@ -1,0 +1,597 @@
+/* =========================================
+   1. GLOBAL STYLES & VARIABLES
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent: #2dd4bf;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+  --glass: rgba(255, 255, 255, 0.7);
+  --border: rgba(226, 232, 240, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Wrapper ab full width hai taake navbar corners tak touch kare */
+.portfolio-wrapper {
+  width: 100%;
+}
+
+/* =========================================
+   2. NAVBAR (Updated for 100% Full Width)
+   ========================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%; /* Side padding ko thoda responsive kiya */
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Poori screen ki width le li */
+  box-sizing: border-box;
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  color: var(--primary);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  margin-left: 2rem;
+  transition: 0.3s;
+}
+
+.nav-links a:hover { 
+  color: var(--primary); 
+}
+
+/* =========================================
+   3. HERO SECTION (Centered with max-width)
+   ========================================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  padding: 60px 3%; 
+  min-height: 85vh;
+  gap: 2rem;
+  max-width: 1400px; /* Content limited to 1400px */
+  margin: 0 auto;    /* Perfectly Centered */
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 1.5rem 0;
+  letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.hero-btns { 
+  display: flex; 
+  gap: 1.5rem; 
+  align-items: center; 
+}
+
+.primary-btn, .cv-btn {
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+  border: none;
+}
+
+.cv-btn {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.primary-btn:hover, .cv-btn:hover { 
+  transform: translateY(-3px); 
+}
+
+/* =========================================
+   4. 3D ROTATING CUBE (Animations)
+   ========================================= */
+.hero-visual { 
+  display: flex; 
+  justify-content: flex-end; 
+  padding-right: 20px; 
+}
+
+.cube-container { 
+  perspective: 1200px; 
+}
+
+.cube {
+  width: 220px; 
+  height: 220px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 15s infinite linear;
+}
+
+.face {
+  position: absolute; 
+  width: 220px; 
+  height: 220px;
+  background: var(--glass);
+  border: 2px solid var(--primary);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-weight: 800; 
+  color: var(--primary);
+  backdrop-filter: blur(8px); 
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+  font-size: 1.2rem; 
+  text-align: center; 
+  padding: 10px;
+}
+
+/* Cube Positioning */
+.front  { transform: translateZ(110px); }
+.back   { transform: rotateY(180deg) translateZ(110px); }
+.right  { transform: rotateY(90deg) translateZ(110px); }
+.left   { transform: rotateY(-90deg) translateZ(110px); }
+.top    { transform: rotateX(90deg) translateZ(110px); }
+.bottom { transform: rotateX(-90deg) translateZ(110px); }
+
+@keyframes rotateCube {
+  from { transform: rotateX(0) rotateY(0); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* =========================================
+   5. MY WORK (Section 2 - Slider & Animations)
+   ========================================= */
+.work-slider-section { 
+  padding: 100px 3% !important; 
+  background: transparent !important; 
+  max-width: 1400px; 
+  margin: 0 auto;    
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 5rem;
+  position: relative;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title::after {
+  content: ''; 
+  position: absolute; 
+  bottom: -15px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 80px; 
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 10px;
+}
+
+/* Swiper Container Padding */
+.mySwiper { 
+  padding: 40px 80px !important; 
+}
+
+/* Main Project Card with Premium Glassmorphism */
+.project-slide-card {
+  display: grid; 
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem; 
+  border-radius: 32px; 
+  padding: 3.5rem;
+  max-width: 1100px; 
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.45)) !important;
+  backdrop-filter: blur(24px); 
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 0 40px 100px -30px rgba(15, 23, 42, 0.08); 
+  align-items: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+/* Card Subtle Floating Lift on Hover */
+.project-slide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 50px 120px -30px rgba(99, 102, 241, 0.12);
+}
+
+/* Image Wrapper with Dynamic Overflow Control */
+.project-image-side { 
+  width: 100%; 
+  height: 420px; 
+  overflow: hidden; 
+  border-radius: 24px; 
+  background: #f1f5f9;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth Cinematographic Zoom on Image */
+.slider-photo { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+.project-slide-card:hover .slider-photo { 
+  transform: scale(1.06) rotate(0.5deg); 
+}
+
+/* Content Side Styling & Entrance Animations */
+.project-info-side {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-number { 
+  font-size: 3.5rem; 
+  font-weight: 800; 
+  color: rgba(99, 102, 241, 0.12); 
+  margin-bottom: -0.5rem; 
+  display: block; 
+}
+
+.project-info-side h3 { 
+  font-size: 2.4rem; 
+  font-weight: 800; 
+  margin-bottom: 1rem; 
+  color: var(--text-main); 
+  letter-spacing: -0.5px;
+}
+
+.project-info-side p { 
+  color: var(--text-muted); 
+  font-size: 1.1rem; 
+  line-height: 1.7; 
+  margin-bottom: 2rem; 
+}
+
+/* Interactive Tech Tags */
+.tech-stack { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 12px; 
+  margin-bottom: 2.5rem; 
+}
+
+.tech-tag { 
+  background: #f1f5f9; 
+  color: var(--text-main); 
+  padding: 8px 16px; 
+  border-radius: 10px; 
+  font-size: 0.85rem; 
+  font-weight: 600; 
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Tech Tags Interactive Hover */
+.project-slide-card:hover .tech-tag {
+  background: rgba(99, 102, 241, 0.06);
+  color: var(--primary);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+/* Professional Action Button */
+.slider-live-btn {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none; 
+  background: var(--text-main); /* Dark sleek background */
+  color: white;
+  padding: 1.1rem 2.2rem; 
+  border-radius: 14px; 
+  font-weight: 700; 
+  align-self: flex-start;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-live-btn span {
+  transition: transform 0.3s ease;
+}
+
+/* Button Hover State */
+.slider-live-btn:hover { 
+  background: var(--primary); 
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
+  transform: translateY(-2px);
+}
+
+.slider-live-btn:hover span {
+  transform: translateX(5px);
+}
+
+/* Active Slide Content Fade-In Animation (Triggered by Swiper Class) */
+.swiper-slide-active .project-info-side > * {
+  animation: fadeInUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+/* Staggering delays for content elements */
+.swiper-slide-active .project-number { animation-delay: 0.1s; }
+.swiper-slide-active h3 { animation-delay: 0.2s; }
+.swiper-slide-active p { animation-delay: 0.3s; }
+.swiper-slide-active .tech-stack { animation-delay: 0.4s; }
+.swiper-slide-active .slider-live-btn { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   PREMIUM GLASS NAVIGATION ARROWS
+   ========================================= */
+.swiper-button-next, 
+.swiper-button-prev {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  color: var(--text-main) !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+  font-size: 1.1rem !important;
+  font-weight: 900 !important;
+}
+
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+  background: var(--primary) !important;
+  color: white !important;
+  border-color: var(--primary) !important;
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(99, 102, 241, 0.25) !important;
+}
+
+.swiper-button-next:active, 
+.swiper-button-prev:active {
+  transform: scale(0.95);
+}
+
+.swiper-button-prev { left: 15px !important; }
+.swiper-button-next { right: 15px !important; }
+
+/* Custom Bullet Pagination Dots styling */
+.swiper-pagination-bullet {
+  background: var(--text-muted) !important;
+  opacity: 0.3 !important;
+  width: 8px !important;
+  height: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
+  opacity: 1 !important;
+  width: 24px !important; /* Premium elongated indicator style */
+  border-radius: 4px !important;
+}
+
+/* =========================================
+   6. CONTACT SECTION (Centered with max-width)
+   ========================================= */
+.contact { 
+  padding: 100px 3% !important; 
+  background: transparent !important; 
+  max-width: 1400px; /* Content limited to 1400px */
+  margin: 0 auto;    /* Perfectly Centered */
+}
+
+.contact-container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 4rem; 
+  align-items: center;
+}
+
+.contact-info h2 { 
+  font-size: 3rem; 
+  font-weight: 800; 
+  line-height: 1.2; 
+  margin: 1.5rem 0; 
+}
+
+.contact-info h2 span { 
+  background: linear-gradient(90deg, var(--primary), var(--accent)); 
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent; 
+}
+
+.info-items { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 2rem; 
+}
+
+.info-item { 
+  display: flex; 
+  align-items: center; 
+  gap: 1.5rem; 
+}
+
+.info-item .icon {
+  width: 55px; 
+  height: 55px; 
+  border-radius: 14px;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(45, 212, 191, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2); 
+  font-size: 1.5rem; 
+  color: var(--primary);
+}
+
+.contact-card {
+  padding: 3rem; 
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4)) !important;
+  backdrop-filter: blur(15px); 
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 30px 60px -12px rgba(99, 102, 241, 0.1);
+}
+
+input, textarea {
+  width: 100%; 
+  padding: 1.2rem; 
+  margin-bottom: 1.2rem;
+  border: 1.5px solid #f1f5f9; 
+  border-radius: 16px;
+  background: #f8fafc; 
+  outline: none; 
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus { 
+  border-color: var(--primary); 
+  background: white; 
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.05); 
+}
+
+.submit-btn {
+  width: 100%; 
+  padding: 1.2rem; 
+  background: var(--primary);
+  color: white; 
+  border: none; 
+  border-radius: 16px;
+  font-weight: 800; 
+  cursor: pointer; 
+  transition: 0.3s;
+}
+
+.submit-btn:hover { 
+  background: var(--primary-hover); 
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2); 
+}
+
+/* =========================================
+   7. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 1024px) {
+  .navbar {
+    width: 100%; /* Mobile par layout safely wrap ho */
+    padding: 1.5rem 20px;
+  }
+
+  .hero { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    padding-top: 40px; 
+  }
+  
+  .hero-content h1 { font-size: 3.2rem; }
+  .hero-content p { margin: 0 auto 2rem auto; }
+  .hero-btns { justify-content: center; }
+  .hero-visual { justify-content: center; padding-right: 0; margin-top: 4rem; }
+  
+  .contact-container, .project-slide-card { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+  }
+  
+  .project-image-side { height: 280px; }
+  .mySwiper { padding: 20px 10px !important; }
+  .swiper-button-next, .swiper-button-prev { display: none !important; }
+  
+  /* Scale cube down for mobile */
+  .cube, .face { width: 160px; height: 160px; }
+  .front  { transform: translateZ(80px); }
+  .back   { transform: rotateY(180deg) translateZ(80px); }
+  .right  { transform: rotateY(90deg) translateZ(80px); }
+  .left   { transform: rotateY(-90deg) translateZ(80px); }
+  .top    { transform: rotateX(90deg) translateZ(80px); }
+  .bottom { transform: rotateX(-90deg) translateZ(80px); }
+}
