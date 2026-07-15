@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolioo.css';
-// import bgVideo from '../assets/videoo2.mp4';
 
 export default function Portfolioo() {
     const [activeSection, setActiveSection] = useState('hero');
