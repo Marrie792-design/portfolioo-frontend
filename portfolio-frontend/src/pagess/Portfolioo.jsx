@@ -21,14 +21,16 @@ const handleSubmit = async (e) => {
     setStatus({ success: null, message: '' });
 
     try {
-        const response = await fetch('http://localhost:5000/api/contact', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
 
+        // Is line ko is tarah update karein:
+const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact', { 
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+});
+    
         const data = await response.json();
 
         if (response.ok) {
