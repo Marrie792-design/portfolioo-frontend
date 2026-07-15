@@ -76,7 +76,10 @@ app.post('/api/contact', (req, res) => {
     });
 });
 
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Server.js ke bilkul niche listen wale part ko is tarah export kar dein:
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = app; // 👈 Yeh line likhna Vercel ke liye zaroori hai!
