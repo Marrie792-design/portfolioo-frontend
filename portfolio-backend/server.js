@@ -6,13 +6,13 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-// server.js ke cors ko is tarah update karein:
+// ✅ 1. Dono URLs ko allowed array mein daal diya hai
 const allowedOrigins = [
-    'http://localhost:5175', // Local development ke liye
-    'https://your-vercel-portfolio-domain.vercel.app' // (Yeh hum bad mein apni live frontend URL se replace karenge)
+    'http://localhost:5175',                      // Local development ke liye
+    'https://portfolio-mimi-z3uv.vercel.app'      // Aapka live frontend URL 🚀
 ];
 
+// ✅ 2. Ek single, dynamic CORS configuration
 app.use(cors({
     origin: function (origin, callback) {
         // allow requests with no origin (like mobile apps or curl requests)
@@ -22,12 +22,10 @@ app.use(cors({
             return callback(new Error(msg), false);
         }
         return callback(null, true);
-    }
+    },
+    methods: ["POST", "GET", "OPTIONS"],
+    credentials: true
 }));
-
-
-
-
 
 app.use(express.json());
 
