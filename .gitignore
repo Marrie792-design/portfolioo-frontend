@@ -23,8 +23,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-=======
->>>>>>> ce68cb0cb1dc07652f0b14c6a6ba27852fb2f30f
 node_modules/
 portfolio-frontend/node_modules/
 portfolio-backend/node_modules/
