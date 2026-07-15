@@ -1343,3 +1343,35 @@ html, body {
         color: #ff9d00 !important;             /* Theme ke mutabiq highlight color */
     }
 }
+
+
+/* Navbar Logo and Text Alignment */
+.nav-logo {
+    display: flex !important;
+    align-items: center !important;  /* Logo aur text ko vertically center rakhega */
+    gap: 8px !important;             /* Logo aur text ke darmiyan 8px ka gap */
+    text-decoration: none;
+}
+
+.navbar-logo-img {
+    width: 32px !important;          /* Mobile aur laptop dono ke liye perfect size */
+    height: 32px !important;
+    object-fit: contain !important;
+    border-radius: 50%;              /* Agar logo ko circular shape deni ho */
+    
+    /* Subtle Glow Effect (Optional - Agar aapke theme ke mutabiq match kare) */
+    filter: drop-shadow(0 0 4px rgba(255, 157, 0, 0.3)); 
+    transition: transform 0.3s ease !important;
+}
+
+/* Hover par logo thoda scale ho (Cool micro-interaction) */
+.nav-logo:hover .navbar-logo-img {
+    transform: scale(1.1) rotate(5deg) !important;
+}
+
+/* MM. text ki style ko preserve rakhne ke liye */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
