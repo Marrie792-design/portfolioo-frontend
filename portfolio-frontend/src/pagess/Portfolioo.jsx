@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Portfolioo.css';
-import bgVideo from '../assets/videoo2.mp4';
+// import bgVideo from '../assets/videoo2.mp4';
 
 export default function Portfolioo() {
     const [activeSection, setActiveSection] = useState('hero');
@@ -147,9 +147,15 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
         <div className="portfolio-container">
 
             <div className="video-background">
-                <video autoPlay loop muted playsInline>
-                    <source src={bgVideo} type="video/mp4" />
-                </video>
+              
+                <video 
+  src="https://assets.mixkit.co/videos/preview/mixkit-abstract-laser-lights-background-32124-large.mp4" 
+  autoPlay 
+  loop 
+  muted 
+  playsInline 
+  className="..." 
+/>
               
                 <div className="video-gradient-overlay"></div>
             </div>
