@@ -167,7 +167,7 @@ export default function Portfolioo() {
             <header className="nav-header">
                 <div className="nav-logo">
                     <img src="/favicon.png" alt="Mimi Logo" className="navbar-logo-img" />
-                    <span className="logo-text">Marie</span>
+                    <span className="logo-text">Marrie</span>
                 </div>
 
                 <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
