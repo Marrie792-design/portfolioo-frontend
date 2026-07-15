@@ -174,7 +174,7 @@ background-color: #1D1A39; /* Fallback deep navy purple */
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: var(--text-main);
+  color: #E8BCB9;
 }
 
 .nav-logo span {
