@@ -101,6 +101,14 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
         },
 
         {
+            title: 'Urdu Sign Language Converter',
+            category: 'Full-Stack',
+            tags: ['React', 'Python', 'Machine Learning', 'Animations'],
+            description: 'Converts Pakistani Sign Language (PSL) into real-time Urdu text/voice and vice versa, bridging deaf-hearing communication gaps.',
+            demoLink: '#',
+        },
+
+           {
             title: 'Sugar Bloom Bakery',
             category: 'Full-Stack',
             tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
@@ -108,13 +116,6 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
             demoLink: 'https://sugar-bloom-kzarlish792-7686s-projects.vercel.app/',
         },
         
-        {
-            title: 'Urdu Sign Language Converter',
-            category: 'Full-Stack',
-            tags: ['React', 'Python', 'Machine Learning', 'Animations'],
-            description: 'Converts Pakistani Sign Language (PSL) into real-time Urdu text/voice and vice versa, bridging deaf-hearing communication gaps.',
-            demoLink: '#',
-        },
         {
             title: 'JusticeLens',
             category: 'AI & Web',
