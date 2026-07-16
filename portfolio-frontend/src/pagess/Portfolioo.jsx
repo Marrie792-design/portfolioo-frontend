@@ -430,27 +430,7 @@ export default function Portfolioo() {
                     </form>
                 </div>
             </section>
-            {/* <section id="contact" className="contact-section">
-                <h2 className="section-title">Initiate Collaboration</h2>
-                <div className="contact-container">
-                    <div className="contact-info">
-                        <h3>Let's build something beautiful.</h3>
-                        <p>I'm always open to talking about potential opportunities, full-stack developments, and code collaborations.</p>
-                        <ul className="contact-details">
-                            <li>✉️ marrie9642@gmail.com</li>
-                            <li>📞 +92 321 7587549</li>
-                            <li>📍 Lahore, Pakistan</li>
-                        </ul>
-                    </div>
-                    <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                        <input type="text" placeholder="Your Name" required />
-                        <input type="email" placeholder="Your Email" required />
-                        <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
-                        <button type="submit" className="btn-primary">Transmit Message</button>
-                    </form>
-                </div>
-            </section> */}
-
+        
             {/* Footer */}
             <footer className="footer-bar">
                 <p>© 2026 Mariam Mushtaq | Full Stack Developer</p>
