@@ -109,11 +109,11 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
         },
 
            {
-            title: 'Sugar Bloom Bakery',
+            title: 'Sugar Bloom',
             category: 'Full-Stack',
             tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
             description: 'A responsive bakery boutique platform incorporating online ordering, interactive menus, and inventory logs.',
-            demoLink: 'https://sugar-bloom-kzarlish792-7686s-projects.vercel.app/',
+            demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
         },
         
         {
