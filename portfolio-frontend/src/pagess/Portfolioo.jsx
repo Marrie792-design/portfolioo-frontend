@@ -100,6 +100,14 @@ export default function Portfolioo() {
         },
 
         {
+            title: 'Sugar Bloom',
+            category: 'Full-Stack',
+            tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
+            description: 'A responsive bakery boutique platform incorporating online ordering, interactive menus, and inventory logs.',
+            demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
+        },
+
+        {
             title: 'Urdu Sign Language Converter',
             category: 'Full-Stack',
             tags: ['React', 'Python', 'Machine Learning', 'Animations'],
@@ -113,14 +121,7 @@ export default function Portfolioo() {
             description: 'An AI-assisted tool analyzing legal scenarios, rendering structured case summaries, and reducing documentation times.',
             demoLink: '#',
         },
-        {
-            title: 'Sugar Bloom Bakery',
-            category: 'Full-Stack',
-            tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
-            description: 'A responsive bakery boutique platform incorporating online ordering, interactive menus, and inventory logs.',
-            demoLink: '#',
-        },
-
+    
         {
             title: 'Event Horizon',
             category: 'Frontend',
