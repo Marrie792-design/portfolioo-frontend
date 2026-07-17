@@ -669,7 +669,7 @@ section {
   display: flex;
   flex-direction: column;
   flex: 1; 
-  padding: 20px; /* Agar aapne padding di hui hai ufff*/
+  padding: 20px; /* Agar aapne padding di hui hai */
 }
 .project-card {
    display: flex;
@@ -739,14 +739,11 @@ section {
 }
 /* Project Links Flex Container */
 .project-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
   margin-top: auto;
-  position: static;
   padding-top: 15px;
-  /* display: flex; */
-  /* gap: 1rem; */
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* Tighter mobile screens par buttons wrap ho sakein */
 }
 
 /* Base button styling */
@@ -1270,31 +1267,13 @@ html, body {
         box-sizing: border-box !important;
     }
 
- .project-card {
-    display: flex !important; /* Card ko flex container banayein */
-    flex-direction: column !important; /* Elements ko niche stack karein */
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-    min-height: 400px; /* Ya apni requirement ke mutabiq min-height dein */
-    position: relative; /* Absolute positioning se bachne ke liye */
-}
-
-/* Ye content wrapper card ke andar space ko balance karega */
-.project-content {
-    display: flex !important;
-    flex-direction: column !important;
-    flex: 1 !important; /* Ye bachi hui space occupy kar lega */
-    padding: 20px !important;
-}
-
-/* Button container ko bottom par force karega */
-.project-links {
-    margin-top: auto !important; /* Ye magic line overlap khatam karti hai */
-    padding-top: 15px !important;
-}
+    .project-card {
+        width: 100% !important;
+        max-width: 100% !important; /* Card hamesha padding ke andar rahega */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
 
     /* 4. Filter Bar ko screen se bahar bhagne se roka aur smooth swipe-scroll de diya */
     .filter-bar {
