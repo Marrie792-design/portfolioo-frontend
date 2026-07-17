@@ -661,20 +661,7 @@ section {
   gap: 2rem;
 }
 
-
-
-
-/* Content container ko flex-1 dein taake woh expand ho sake */
-.project-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1; 
-  padding: 20px; /* Agar aapne padding di hui hai */
-}
 .project-card {
-   display: flex;
-  flex-direction: column;
-  height: 100%;
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
@@ -739,10 +726,10 @@ section {
 }
 /* Project Links Flex Container */
 .project-links {
-  margin-top: auto;
-  padding-top: 15px;
   display: flex;
   gap: 1rem;
+  margin-top: auto; /* Buttons ko card ke bottom par align rakhega chahe description choti-badi ho */
+  padding-top: 1.5rem;
   flex-wrap: wrap; /* Tighter mobile screens par buttons wrap ho sakein */
 }
 
