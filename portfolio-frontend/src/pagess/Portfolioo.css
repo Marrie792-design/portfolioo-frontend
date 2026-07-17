@@ -662,10 +662,6 @@ section {
 }
 
 .project-card {
-   display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
@@ -729,39 +725,11 @@ section {
   text-decoration: underline;
 }
 /* Project Links Flex Container */
-
-
-/* Dono buttons ki styling (Equal sizing aur center text ke liye) */
-.demo-link, .view-code-link {
-    flex: 1; /* Dono buttons ko equal width dega */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-/* View Code button ko glassmorphism look dene ke liye (kyunki live demo pehle hi colored hai) */
-.view-code-link {
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.view-code-link:hover {
-    background: rgba(255, 255, 255, 0.18);
-    border-color: rgba(255, 255, 255, 0.3);
-}
 .project-links {
-    margin-top: auto; /* Buttons ko hamesha bottom par push karega */
-    padding-top: 20px; /* Text se thoda gap rakhne ke liye */
-    display: flex;
-    gap: 12px; /* Dono buttons ke darmiyan space */
-    width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-top: auto; /* Buttons ko card ke bottom par align rakhega chahe description choti-badi ho */
+  padding-top: 1.5rem;
   flex-wrap: wrap; /* Tighter mobile screens par buttons wrap ho sakein */
 }
 
@@ -1286,13 +1254,13 @@ html, body {
         box-sizing: border-box !important;
     }
 
-    /* .project-card {
+    .project-card {
         width: 100% !important;
-        max-width: 100% !important;
+        max-width: 100% !important; /* Card hamesha padding ke andar rahega */
         margin-left: 0 !important;
         margin-right: 0 !important;
         box-sizing: border-box !important;
-    } */
+    }
 
     /* 4. Filter Bar ko screen se bahar bhagne se roka aur smooth swipe-scroll de diya */
     .filter-bar {

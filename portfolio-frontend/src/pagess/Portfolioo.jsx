@@ -89,54 +89,50 @@ export default function Portfolioo() {
     }, []);
 
 
-    const projects = [
-
-        {
-            title: 'Marrie Mart',
-            category: 'Full-Stack',
-            tags: ['React', 'Node.js', 'MongoDB', 'Authentication'],
-            description: 'E-commerce platform equipped with dynamic product catalogs, a structured cart/checkout sequence, and secure authentication.',
-            demoLink: 'https://marrie-mart-fnlsk8wte-kzarlish792-7686s-projects.vercel.app/',
-        },
-
-        {
-            title: 'Sugar Bloom',
-            category: 'Full-Stack',
-            tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
-            description: 'A responsive bakery boutique platform incorporating online ordering, interactive menus, and inventory logs.',
-            demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
-        },
-
-        {
-            title: 'Urdu Sign Language Converter',
-            category: 'Full-Stack',
-            tags: ['React', 'Python', 'Machine Learning', 'Animations'],
-            description: 'Converts Pakistani Sign Language (PSL) into real-time Urdu text/voice and vice versa, bridging deaf-hearing communication gaps.',
-            demoLink: '#',
-        },
-        {
-            title: 'JusticeLens',
-            category: 'AI & Web',
-            tags: ['React', 'AI Model', 'Express.js', 'Legal Tech'],
-            description: 'An AI-assisted tool analyzing legal scenarios, rendering structured case summaries, and reducing documentation times.',
-            demoLink: '#',
-        },
-    
-        {
-            title: 'Event Horizon',
-            category: 'Frontend',
-            tags: ['React', 'CSS Transitions', 'Event UI'],
-            description: 'Dynamic platform facilitating event booking, vendor listings, and intuitive ticket generation systems.',
-            demoLink: '#',
-        },
-        {
-            title: 'TravelGo',
-            category: 'Frontend',
-            tags: ['React', 'API Integration', 'UI UX'],
-            description: 'Polished travel discovery portal with smart dynamic search criteria, comprehensive category filters, and booking options.',
-            demoLink: '#',
-        }
-    ];
+  const projects = [
+    {
+        title: 'Marrie Mart',
+        category: 'Full-Stack',
+        tags: ['React', 'Node.js', 'MongoDB', 'Authentication'],
+        description: 'An e-commerce platform featuring dynamic product catalogs, secure checkout workflows, and user authentication systems.',
+        demoLink: 'https://marrie-mart-fnlsk8wte-kzarlish792-7686s-projects.vercel.app/',
+    },
+    {
+        title: 'Sugar Bloom',
+        category: 'Full-Stack',
+        tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
+        description: 'A responsive bakery boutique platform providing online ordering systems, interactive menus, and inventory tracking.',
+        demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
+    },
+    {
+        title: 'Urdu Sign Language Converter',
+        category: 'Full-Stack',
+        tags: ['React', 'Python', 'Machine Learning', 'Animations'],
+        description: 'An AI-powered tool converting sign language into real-time Urdu text and speech, bridging communication gaps.',
+        demoLink: '#',
+    },
+    {
+        title: 'JusticeLens',
+        category: 'AI & Web',
+        tags: ['React', 'AI Model', 'Express.js', 'Legal Tech'],
+        description: 'An AI-assisted portal analyzing legal cases, rendering structured legal summaries, and streamlining workflows.',
+        demoLink: '#',
+    },
+    {
+        title: 'Event Horizon',
+        category: 'Frontend',
+        tags: ['React', 'CSS Transitions', 'Event UI'],
+        description: 'A dynamic dashboard streamlining event bookings, interactive vendor management, and smart ticket generation.',
+        demoLink: '#',
+    },
+    {
+        title: 'TravelGo',
+        category: 'Frontend',
+        tags: ['React', 'API Integration', 'UI UX'],
+        description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
+        demoLink: '#',
+    }
+];
 
     const filteredProjects = projectFilter === 'All'
         ? projects
