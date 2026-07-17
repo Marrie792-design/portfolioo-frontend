@@ -739,11 +739,14 @@ section {
 }
 /* Project Links Flex Container */
 .project-links {
-  margin-top: auto;
-  padding-top: 15px;
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap; /* Tighter mobile screens par buttons wrap ho sakein */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  position: static;
+  padding-top: 15px;
+  /* display: flex; */
+  /* gap: 1rem; */
 }
 
 /* Base button styling */
@@ -1267,13 +1270,31 @@ html, body {
         box-sizing: border-box !important;
     }
 
-    .project-card {
-        width: 100% !important;
-        max-width: 100% !important; /* Card hamesha padding ke andar rahega */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
-    }
+ .project-card {
+    display: flex !important; /* Card ko flex container banayein */
+    flex-direction: column !important; /* Elements ko niche stack karein */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+    min-height: 400px; /* Ya apni requirement ke mutabiq min-height dein */
+    position: relative; /* Absolute positioning se bachne ke liye */
+}
+
+/* Ye content wrapper card ke andar space ko balance karega */
+.project-content {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important; /* Ye bachi hui space occupy kar lega */
+    padding: 20px !important;
+}
+
+/* Button container ko bottom par force karega */
+.project-links {
+    margin-top: auto !important; /* Ye magic line overlap khatam karti hai */
+    padding-top: 15px !important;
+}
 
     /* 4. Filter Bar ko screen se bahar bhagne se roka aur smooth swipe-scroll de diya */
     .filter-bar {
@@ -1387,44 +1408,4 @@ html, body {
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
-}
-
-
-
-
-
-
-
-
-
-
-/* 1. Ensure the grid container items stretch to fill the row */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  align-items: stretch; /* Yeh ensure karta hai cards full height lein */
-}
-
-/* 2. Force the card to fill the available space */
-.project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* Important: Card ko cell ki full height tak khainchne ke liye */
-  position: relative;
-  /* Aapke existing styles yahan aayenge (background, border, etc.) */
-}
-
-/* 3. Make content container expand to push the buttons down */
-.project-content {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Yeh bachi hui sari space le lega */
-  padding: 20px;
-}
-
-/* 4. Push the links/buttons container to the bottom */
-.project-links {
-  margin-top: auto; /* Yeh magic property hai jo buttons ko bottom par fix karti hai */
-  padding-top: 15px;
 }
