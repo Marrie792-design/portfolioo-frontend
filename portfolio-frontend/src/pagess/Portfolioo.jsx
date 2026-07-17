@@ -100,7 +100,7 @@ export default function Portfolioo() {
     {
         title: 'Sugar Bloom',
         category: 'Full-Stack',
-        tags: ['React', 'Express.js', 'Node.js', 'MySQL'],
+        tags: ['React', 'Express.js', 'Node.js', 'MySQL', 'Bootstrap'],
         description: 'A responsive bakery boutique platform providing online ordering systems, interactive menus, and inventory tracking.',
         demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
     },
@@ -121,14 +121,14 @@ export default function Portfolioo() {
     {
         title: 'Event Horizon',
         category: 'Frontend',
-        tags: ['React', 'CSS Transitions', 'Event UI'],
+        tags: ['React', 'CSS Transitions', 'Event UI', 'Express.js'],
         description: 'A dynamic dashboard streamlining event bookings, interactive vendor management, and smart ticket generation.',
         demoLink: '#',
     },
     {
         title: 'TravelGo',
         category: 'Frontend',
-        tags: ['React', 'API Integration', 'UI UX'],
+        tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
         description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
         demoLink: '#',
     }
