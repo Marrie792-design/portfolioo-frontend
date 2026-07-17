@@ -1208,3 +1208,43 @@ section {
     display: flex;
   }
 }
+
+
+
+
+
+
+
+
+
+
+/* 1. Ensure the grid container items stretch to fill the row */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: stretch; /* Yeh ensure karta hai cards full height lein */
+}
+
+/* 2. Force the card to fill the available space */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Important: Card ko cell ki full height tak khainchne ke liye */
+  position: relative;
+  /* Aapke existing styles yahan aayenge (background, border, etc.) */
+}
+
+/* 3. Make content container expand to push the buttons down */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Yeh bachi hui sari space le lega */
+  padding: 20px;
+}
+
+/* 4. Push the links/buttons container to the bottom */
+.project-links {
+  margin-top: auto; /* Yeh magic property hai jo buttons ko bottom par fix karti hai */
+  padding-top: 15px;
+}
