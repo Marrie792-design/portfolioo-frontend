@@ -123,14 +123,14 @@ export default function Portfolioo() {
         category: 'Frontend',
         tags: ['React', 'CSS Transitions', 'Event UI', 'Express.js'],
         description: 'A dynamic dashboard streamlining event bookings, interactive vendor management, and smart ticket generation.',
-        demoLink: '#',
+        demoLink: 'https://event-horizon-frontend-livid.vercel.app/',
     },
     {
         title: 'TravelGo',
         category: 'Frontend',
         tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
         description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
-        demoLink: '#',
+        demoLink: 'https://travel-frontend-seven-teal.vercel.app/',
     }
 ];
 
