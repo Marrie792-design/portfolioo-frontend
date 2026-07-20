@@ -174,11 +174,11 @@ background-color: #1D1A39; /* Fallback deep navy purple */
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.5px;
-  color: var(--text-main);
+  color: #E8BCB9;
 }
 
 .nav-logo span {
-  color: var(--accent-primary);
+  color: var(--text-muted);
 }
 
 .nav-menu {
@@ -849,6 +849,32 @@ section {
   font-weight: 500;
 }
 
+
+/* Mobile Responsive Adjustments for Projects */
+@media (max-width: 768px) {
+    .project-links {
+        display: flex !important;             /* Force Flexbox */
+        justify-content: center !important;   /* Centers horizontally */
+        align-items: center !important;       /* Centers vertically */
+        flex-direction: column !important;    /* Stack buttons vertically */
+        gap: 12px !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+        text-align: center !important;        /* Fallback for inline-blocks */
+    }
+
+    .demo-link, .view-code-link {
+        display: inline-flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        max-width: 290px !important;
+        margin: 0 auto !important;            /* 👈 Super-fallback: Yeh har haal mein button ko center kar ke chorega! */
+        padding: 12px 24px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+}
 /* --- Contact Section --- */
 /* .contact-container {
   display: grid;
@@ -1193,4 +1219,159 @@ section {
   .mobile-toggle {
     display: flex;
   }
+}
+
+
+
+
+
+
+
+
+/* 1. Global Page Protection (Taaki koi bhi element page ko right side par stretch na kare) */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    /* 2. Projects Section ki padding ko dono sides se equal (20px) kiya */
+    .projects-section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3. Projects Grid aur Cards ko block-level par lakar screen ke andar constrain kiya */
+    .projects-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .project-card {
+        width: 100% !important;
+        max-width: 100% !important; /* Card hamesha padding ke andar rahega */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. Filter Bar ko screen se bahar bhagne se roka aur smooth swipe-scroll de diya */
+    .filter-bar {
+        display: flex !important;
+        overflow-x: auto !important; /* Mobile par swipe scroll enabled */
+        white-space: nowrap !important; /* Buttons ko ek hi line mein rakhega */
+        width: 100% !important;
+        padding: 10px 5px !important;
+        justify-content: flex-start !important; /* Scroll left se start hoga */
+        gap: 10px !important;
+        box-sizing: border-box !important;
+        
+        /* Hide Scrollbar for clean look */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+    
+    .filter-bar::-webkit-scrollbar {
+        display: none; /* Safari and Chrome */
+    }
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    /* 1️⃣ Closed State: Default menu ko hidden aur off-screen rakhein */
+    .nav-menu, .nav-links, .dropdown-menu {
+        display: none !important;              /* By default bilkul gayab */
+        opacity: 0 !important;
+        pointer-events: none !important;
+        transition: all 0.3s ease-in-out !important;
+    }
+
+    /* 2️⃣ Active State: Jab toggler active ho (state true ho), tabhi center mein show karein */
+    .nav-menu.active, .nav-links.active, .dropdown-menu.active { 
+        display: flex !important;              /* Click par show hoga */
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        position: absolute !important;
+        top: 80px !important;                  /* Navbar ki height ke mutabiq spacing */
+        
+        /* ── Perfect Centering ── */
+        left: 50% !important;
+        transform: translateX(-50%) !important; /* Menu bilkul beech mein lock */
+        right: auto !important;
+        
+        /* ── Width and Beautiful Card Design ── */
+        width: calc(100% - 40px) !important;    /* Dono side se 20px equal margin */
+        max-width: 340px !important;            /* Box bohot lamba na ho */
+        background-color: rgba(23, 19, 41, 0.98) !important; /* Solid Dark/Glowy Background */
+        border: 1px solid rgba(255, 255, 255, 0.1) !important; /* Clean subtle border */
+        border-radius: 16px !important;         /* Rounded corners */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important; /* Drop shadow */
+        z-index: 9999 !important;               /* Sab cheezon ke upar show ho */
+        
+        /* ── Inner Alignment ── */
+        flex-direction: column !important;
+        align-items: center !important;         /* Items center aligned */
+        text-align: center !important;
+        padding: 24px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 3️⃣ Menu Links ke darmiyan equal space */
+    .nav-menu.active a, .nav-links.active a {
+        width: 100% !important;
+        padding: 14px 0 !important;
+        display: block !important;
+        color: #E8BCB9 !important;
+        font-size: 1.1rem !important;
+        text-decoration: none !important;
+        transition: color 0.2s ease !important;
+    }
+
+    /* Hover/Active effects for links */
+    .nav-menu.active a:hover, .nav-links.active a:hover {
+        color: #ff9d00 !important;             /* Theme ke mutabiq highlight color */
+    }
+}
+
+
+/* Navbar Logo and Text Alignment */
+.nav-logo {
+    display: flex !important;
+    align-items: center !important;  /* Logo aur text ko vertically center rakhega */
+    gap: 8px !important;             /* Logo aur text ke darmiyan 8px ka gap */
+    text-decoration: none;
+}
+
+.navbar-logo-img {
+    width: 32px !important;          /* Mobile aur laptop dono ke liye perfect size */
+    height: 32px !important;
+    object-fit: contain !important;
+    border-radius: 50%;              /* Agar logo ko circular shape deni ho */
+    
+    /* Subtle Glow Effect (Optional - Agar aapke theme ke mutabiq match kare) */
+    filter: drop-shadow(0 0 4px rgba(255, 157, 0, 0.3)); 
+    transition: transform 0.3s ease !important;
+}
+
+/* Hover par logo thoda scale ho (Cool micro-interaction) */
+.nav-logo:hover .navbar-logo-img {
+    transform: scale(1.1) rotate(5deg) !important;
+}
+
+/* MM. text ki style ko preserve rakhne ke liye */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
