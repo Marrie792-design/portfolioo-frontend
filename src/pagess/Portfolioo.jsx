@@ -21,8 +21,7 @@ const handleSubmit = async (e) => {
 
     try {
 
-        // Is line ko is tarah update karein:
-const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact', { 
+const response = await fetch('https://portfolioo-backend-beta.vercel.app/api/contact', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -69,26 +68,6 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
             hiddenElements.forEach((el) => observer.unobserve(el));
         };
     }, []);
-
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('reveal-active');
-                    }
-                });
-            },
-            { threshold: 0.15 } // Jab 15% section screen par aaye tab show ho
-        );
-
-        const elements = document.querySelectorAll('.reveal');
-        elements.forEach((el) => observer.observe(el));
-
-        return () => observer.disconnect();
-    }, []);
-
 
     // const projects = [
 
