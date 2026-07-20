@@ -129,14 +129,14 @@ const response = await fetch('https://portfolio-mimi-rho.vercel.app/api/contact'
             category: 'Frontend',
             tags: ['React', 'CSS Transitions', 'Event UI'],
             description: 'Dynamic platform facilitating event booking, vendor listings, and intuitive ticket generation systems.',
-            demoLink: '#',
+            demoLink: 'https://event-horizon-frontend-livid.vercel.app/',
         },
         {
             title: 'TravelGo',
             category: 'Frontend',
             tags: ['React', 'API Integration', 'UI UX'],
             description: 'Polished travel discovery portal with smart dynamic search criteria, comprehensive category filters, and booking options.',
-            demoLink: '#',
+            demoLink: 'https://travel-frontend-seven-teal.vercel.app/',
         }
     ];
 
