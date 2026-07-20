@@ -6,43 +6,43 @@ export default function Portfolioo() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [projectFilter, setProjectFilter] = useState('All');
 
-const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-const [status, setStatus] = useState({ success: null, message: '' });
-const [loading, setLoading] = useState(false);
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [status, setStatus] = useState({ success: null, message: '' });
+    const [loading, setLoading] = useState(false);
 
-const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
-const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setStatus({ success: null, message: '' });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus({ success: null, message: '' });
 
-    try {
+        try {
 
-const response = await fetch('https://portfolioo-backend-beta.vercel.app/api/contact', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(formData),
-});
-    
-        const data = await response.json();
+            const response = await fetch('https://portfolioo-backend-beta.vercel.app/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-        if (response.ok) {
-            setStatus({ success: true, message: 'Message send successfully! 🚀' });
-            setFormData({ name: '', email: '', message: '' }); // Clear Form
-        } else {
-            setStatus({ success: false, message: data.error || 'Something went wrong.' });
+            const data = await response.json();
+
+            if (response.ok) {
+                setStatus({ success: true, message: 'Message send successfully! 🚀' });
+                setFormData({ name: '', email: '', message: '' }); // Clear Form
+            } else {
+                setStatus({ success: false, message: data.error || 'Something went wrong.' });
+            }
+        } catch (error) {
+            setStatus({ success: false, message: 'Failed to connect to backend server.' });
+        } finally {
+            setLoading(false);
         }
-    } catch (error) {
-        setStatus({ success: false, message: 'Failed to connect to backend server.' });
-    } finally {
-        setLoading(false);
-    }
-};
+    };
     // Custom Intersection Observer for Scroll Animations
     useEffect(() => {
         const observerOptions = {
@@ -94,7 +94,7 @@ const response = await fetch('https://portfolioo-backend-beta.vercel.app/api/con
     //         description: 'Converts Pakistani Sign Language (PSL) into real-time Urdu text/voice and vice versa, bridging deaf-hearing communication gaps.',
     //         demoLink: '#',
     //     },
-        
+
     //     {
     //         title: 'JusticeLens',
     //         category: 'AI & Web',
@@ -102,7 +102,7 @@ const response = await fetch('https://portfolioo-backend-beta.vercel.app/api/con
     //         description: 'An AI-assisted tool analyzing legal scenarios, rendering structured case summaries, and reducing documentation times.',
     //         demoLink: '#',
     //     },
-       
+
     //     {
     //         title: 'Event Horizon',
     //         category: 'Frontend',
@@ -118,7 +118,7 @@ const response = await fetch('https://portfolioo-backend-beta.vercel.app/api/con
     //         demoLink: 'https://travel-frontend-seven-teal.vercel.app/',
     //     }
     // ];
-const projects = [
+    const projects = [
         {
             title: 'Marrie Mart',
             category: 'Full-Stack',
@@ -169,7 +169,7 @@ const projects = [
         }
     ];
 
-    
+
     const filteredProjects = projectFilter === 'All'
         ? projects
         : projects.filter(p => p.category === projectFilter);
@@ -178,16 +178,16 @@ const projects = [
         <div className="portfolio-container">
 
             <div className="video-background">
-              
-                <video 
-  src="https://www.pexels.com/download/video/33691299/" 
-  autoPlay 
-  loop 
-  muted 
-  playsInline 
-  className="..." 
-/>
-              
+
+                <video
+                    src="https://www.pexels.com/download/video/33691299/"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="..."
+                />
+
                 <div className="video-gradient-overlay"></div>
             </div>
             {/* Visual Background Elements */}
@@ -199,7 +199,8 @@ const projects = [
             {/* Navigation Header */}
             <header className="nav-header">
                 <div className="nav-logo">
-                    MM<span>.</span>
+                    <img src="/favicon.png" alt="Mimi Logo" className="navbar-logo-img" />
+                    <span className="logo-text">Marrie</span>
                 </div>
                 <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                     <span className={menuOpen ? 'bar open' : 'bar'}></span>
@@ -335,53 +336,53 @@ const projects = [
             </section>
 
             {/* Projects Section */}
-<section id="projects" className="projects-section reveal">
-    <h2 className="section-title">Selected Works</h2>
-    <div className="filter-bar">
-        {['All', 'Full-Stack', 'Frontend', 'AI & Web'].map(category => (
-            <button
-                key={category}
-                className={`filter-btn ${projectFilter === category ? 'active' : ''}`}
-                onClick={() => setProjectFilter(category)}
-            >
-                {category}
-            </button>
-        ))}
-    </div>
-
-    <div className="projects-grid">
-        {filteredProjects.map((project, index) => (
-            <div className="project-card" key={index}>
-                <div className="project-card-glow"></div>
-                <div className="project-content">
-                    <div className="project-category-tag">{project.category}</div>
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <div className="project-skills">
-                        {project.tags.map((tag, i) => (
-                            <span key={i} className="skill-badge">{tag}</span>
-                        ))}
-                    </div>
-                    
-                    {/* 👇 Updated Links Container */}
-                    <div className="project-links">
-                        {project.demoLink && project.demoLink !== '#' && (
-                            <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="demo-link">
-                                Live Demo ↗
-                            </a>
-                        )}
-                        {/* Naya View Code / GitHub Button */}
-                        {project.githubLink && project.githubLink !== '#' && (
-                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="view-code-link">
-                                View Code 📁
-                            </a>
-                        )}
-                    </div>
+            <section id="projects" className="projects-section reveal">
+                <h2 className="section-title">Selected Works</h2>
+                <div className="filter-bar">
+                    {['All', 'Full-Stack', 'Frontend', 'AI & Web'].map(category => (
+                        <button
+                            key={category}
+                            className={`filter-btn ${projectFilter === category ? 'active' : ''}`}
+                            onClick={() => setProjectFilter(category)}
+                        >
+                            {category}
+                        </button>
+                    ))}
                 </div>
-            </div>
-        ))}
-    </div>
-</section>
+
+                <div className="projects-grid">
+                    {filteredProjects.map((project, index) => (
+                        <div className="project-card" key={index}>
+                            <div className="project-card-glow"></div>
+                            <div className="project-content">
+                                <div className="project-category-tag">{project.category}</div>
+                                <h3>{project.title}</h3>
+                                <p>{project.description}</p>
+                                <div className="project-skills">
+                                    {project.tags.map((tag, i) => (
+                                        <span key={i} className="skill-badge">{tag}</span>
+                                    ))}
+                                </div>
+
+                                {/* 👇 Updated Links Container */}
+                                <div className="project-links">
+                                    {project.demoLink && project.demoLink !== '#' && (
+                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="demo-link">
+                                            Live Demo ↗
+                                        </a>
+                                    )}
+                                    {/* Naya View Code / GitHub Button */}
+                                    {project.githubLink && project.githubLink !== '#' && (
+                                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="view-code-link">
+                                            View Code 📁
+                                        </a>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
 
             {/* Experience Section */}
@@ -402,64 +403,64 @@ const projects = [
 
             {/* Contact Section */}
             {/* Contact Section */}
-<section id="contact" className="contact-section">
-    <h2 className="section-title">Initiate Collaboration</h2>
-    <div className="contact-container">
-        <div className="contact-info">
-            <h3>Let's build something beautiful.</h3>
-            <p>I'm always open to talking about potential opportunities, full-stack developments, and code collaborations.</p>
-            <ul className="contact-details">
-                <li>✉️ marrie9642@gmail.com</li>
-                <li>📞 +92 321 7587549</li>
-                <li>📍 Lahore, Pakistan</li>
-            </ul>
-        </div>
-        
-        {/* Updated Form */}
-        <form className="contact-form" onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                name="name"
-                placeholder="Your Name" 
-                value={formData.name}
-                onChange={handleChange}
-                required 
-            />
-            <input 
-                type="email" 
-                name="email"
-                placeholder="Your Email" 
-                value={formData.email}
-                onChange={handleChange}
-                required 
-            />
-            <textarea 
-                name="message"
-                placeholder="Tell me about your project..." 
-                rows="5" 
-                value={formData.message}
-                onChange={handleChange}
-                required
-            ></textarea>
-            
-            <button type="submit" className="btn-primary" disabled={loading}>
-                {loading ? 'Sending...' : 'Send Message'}
-            </button>
+            <section id="contact" className="contact-section">
+                <h2 className="section-title">Initiate Collaboration</h2>
+                <div className="contact-container">
+                    <div className="contact-info">
+                        <h3>Let's build something beautiful.</h3>
+                        <p>I'm always open to talking about potential opportunities, full-stack developments, and code collaborations.</p>
+                        <ul className="contact-details">
+                            <li>✉️ marrie9642@gmail.com</li>
+                            <li>📞 +92 321 7587549</li>
+                            <li>📍 Lahore, Pakistan</li>
+                        </ul>
+                    </div>
 
-            {/* Success/Error Feedback UI */}
-            {status.message && (
-                <p style={{ 
-                    marginTop: '1rem', 
-                    color: status.success ? '#10B981' : '#EF4444',
-                    fontWeight: '500',
-                    textAlign: 'center' 
-                }}>
-                    {status.message}
-                </p>
-            )}
-        </form>
-    </div>
-</section>
+                    {/* Updated Form */}
+                    <form className="contact-form" onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                        <textarea
+                            name="message"
+                            placeholder="Tell me about your project..."
+                            rows="5"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                        ></textarea>
+
+                        <button type="submit" className="btn-primary" disabled={loading}>
+                            {loading ? 'Sending...' : 'Send Message'}
+                        </button>
+
+                        {/* Success/Error Feedback UI */}
+                        {status.message && (
+                            <p style={{
+                                marginTop: '1rem',
+                                color: status.success ? '#10B981' : '#EF4444',
+                                fontWeight: '500',
+                                textAlign: 'center'
+                            }}>
+                                {status.message}
+                            </p>
+                        )}
+                    </form>
+                </div>
+            </section>
             {/* <section id="contact" className="contact-section">
                 <h2 className="section-title">Initiate Collaboration</h2>
                 <div className="contact-container">
