@@ -125,7 +125,7 @@ export default function Portfolioo() {
             tags: ['React', 'Node.js', 'MongoDB', 'Authentication'],
             description: 'An e-commerce platform featuring dynamic product catalogs, secure checkout workflows, and user authentication systems.',
             demoLink: 'https://marrie-mart-fnlsk8wte-kzarlish792-7686s-projects.vercel.app/',
-            githubLink: 'https://github.com/yourusername/marrie-mart', // 👈 Apna link dalein
+            githubLink: 'https://github.com/Marrie792-design/MarrieMart', // 👈 Apna link dalein
         },
         {
             title: 'Sugar Bloom',
@@ -133,7 +133,7 @@ export default function Portfolioo() {
             tags: ['React', 'Express.js', 'Node.js', 'MySQL', 'Bootstrap'],
             description: 'A responsive bakery boutique platform providing online ordering systems, interactive menus, and inventory tracking.',
             demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
-            githubLink: 'https://github.com/yourusername/sugar-bloom', // 👈 Apna link dalein
+            githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom', // 👈 Apna link dalein
         },
         {
             title: 'Urdu Sign Language Converter',
@@ -148,16 +148,16 @@ export default function Portfolioo() {
             category: 'AI & Web',
             tags: ['React', 'AI Model', 'Express.js', 'Legal Tech'],
             description: 'An AI-assisted portal analyzing legal cases, rendering structured legal summaries, and streamlining workflows.',
-            demoLink: '#',
-            githubLink: '#',
+            demoLink: 'https://justice-lens-frontend.vercel.app/',
+            githubLink: 'https://github.com/Marrie792-design/JusticeLens-frontend', 
         },
         {
             title: 'Event Horizon',
             category: 'Frontend',
             tags: ['React', 'CSS Transitions', 'Event UI', 'Express.js'],
             description: 'A dynamic dashboard streamlining event bookings, interactive vendor management, and smart ticket generation.',
-            demoLink: 'https://event-horizon-frontend-livid.vercel.app/',
-            githubLink: 'https://github.com/yourusername/event-horizon', // 👈 Apna link dalein
+            demoLink: 'https://event-horizon-frontend-oh83.vercel.app/',
+            githubLink: 'https://github.com/Marrie792-design/EventHorizon-frontend',
         },
         {
             title: 'TravelGo',
@@ -165,7 +165,7 @@ export default function Portfolioo() {
             tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
             description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
             demoLink: 'https://travel-frontend-seven-teal.vercel.app/',
-            githubLink: 'https://github.com/yourusername/travelgo', // 👈 Apna link dalein
+            githubLink: 'https://github.com/Marrie792-design/Travel-Frontend', // 👈 Apna link dalein
         }
     ];
 
