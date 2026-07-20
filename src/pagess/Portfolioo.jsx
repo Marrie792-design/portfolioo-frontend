@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import './Portfolioo.css';
 
@@ -199,32 +195,33 @@ const projects = [
         ? projects
         : projects.filter(p => p.category === projectFilter);
 
-
     return (
         <div className="portfolio-container">
+
             <div className="video-background">
-                <video
-                    src="https://www.pexels.com/download/video/33691299/"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="..."
-                />
+              
+                <video 
+  src="https://www.pexels.com/download/video/33691299/" 
+  autoPlay 
+  loop 
+  muted 
+  playsInline 
+  className="..." 
+/>
+              
                 <div className="video-gradient-overlay"></div>
             </div>
-
+            {/* Visual Background Elements */}
             <div className="grid-overlay"></div>
             <div className="blobblob blob1"></div>
             <div className="blobblob blob2"></div>
             <div className="blobblob blob3"></div>
 
+            {/* Navigation Header */}
             <header className="nav-header">
                 <div className="nav-logo">
-                    <img src="/favicon.png" alt="Mimi Logo" className="navbar-logo-img" />
-                    <span className="logo-text">Marrie</span>
+                    MM<span>.</span>
                 </div>
-
                 <button className="mobile-toggle" onClick={() => setMenuOpen(!menuOpen)}>
                     <span className={menuOpen ? 'bar open' : 'bar'}></span>
                     <span className={menuOpen ? 'bar open' : 'bar'}></span>
@@ -239,6 +236,7 @@ const projects = [
                 </nav>
             </header>
 
+            {/* Hero Section */}
             <section id="hero" className="hero-section reveal">
                 <div className="hero-grid">
                     <div className="hero-content">
@@ -254,6 +252,7 @@ const projects = [
                         </div>
                     </div>
 
+                    {/* New Interactive Visual Component (Mock IDE/Terminal window) */}
                     <div className="hero-visual">
                         <div className="code-window">
                             <div className="code-header">
@@ -285,6 +284,7 @@ const projects = [
                             </div>
                         </div>
 
+                        {/* Floating Tech Badges with separate hover floating animations */}
                         <div className="floating-tag tag-react">React</div>
                         <div className="floating-tag tag-node">Node.js</div>
                         <div className="floating-tag tag-express">Express</div>
@@ -293,6 +293,7 @@ const projects = [
                 </div>
             </section>
 
+            {/* About Section */}
             <section id="about" className="about-section reveal">
                 <h2 className="section-title">About & Education</h2>
                 <div className="about-grid">
@@ -320,6 +321,7 @@ const projects = [
                 </div>
             </section>
 
+            {/* Skills Section */}
             <section id="skills" className="skills-section reveal">
                 <h2 className="section-title">My Tech Stack</h2>
                 <div className="skills-grid">
@@ -353,52 +355,57 @@ const projects = [
                 </div>
             </section>
 
-            <section id="projects" className="projects-section reveal">
-                <h2 className="section-title">Selected Works</h2>
-                <div className="filter-bar">
-                    {['All', 'Full-Stack', 'Frontend', 'AI & Web'].map(category => (
-                        <button
-                            key={category}
-                            className={`filter-btn ${projectFilter === category ? 'active' : ''}`}
-                            onClick={() => setProjectFilter(category)}
-                        >
-                            {category}
-                        </button>
-                    ))}
+            {/* Projects Section */}
+<section id="projects" className="projects-section reveal">
+    <h2 className="section-title">Selected Works</h2>
+    <div className="filter-bar">
+        {['All', 'Full-Stack', 'Frontend', 'AI & Web'].map(category => (
+            <button
+                key={category}
+                className={`filter-btn ${projectFilter === category ? 'active' : ''}`}
+                onClick={() => setProjectFilter(category)}
+            >
+                {category}
+            </button>
+        ))}
+    </div>
+
+    <div className="projects-grid">
+        {filteredProjects.map((project, index) => (
+            <div className="project-card" key={index}>
+                <div className="project-card-glow"></div>
+                <div className="project-content">
+                    <div className="project-category-tag">{project.category}</div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <div className="project-skills">
+                        {project.tags.map((tag, i) => (
+                            <span key={i} className="skill-badge">{tag}</span>
+                        ))}
+                    </div>
+                    
+                    {/* 👇 Updated Links Container */}
+                    <div className="project-links">
+                        {project.demoLink && project.demoLink !== '#' && (
+                            <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="demo-link">
+                                Live Demo ↗
+                            </a>
+                        )}
+                        {/* Naya View Code / GitHub Button */}
+                        {project.githubLink && project.githubLink !== '#' && (
+                            <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="view-code-link">
+                                View Code 📁
+                            </a>
+                        )}
+                    </div>
                 </div>
+            </div>
+        ))}
+    </div>
+</section>
 
-                <div className="projects-grid">
-                    {filteredProjects.map((project, index) => (
-                        <div className="project-card" key={index}>
-                            <div className="project-card-glow"></div>
-                            <div className="project-content">
-                                <div className="project-category-tag">{project.category}</div>
-                                <h3>{project.title}</h3>
-                                <p>{project.description}</p>
-                                <div className="project-skills">
-                                    {project.tags.map((tag, i) => (
-                                        <span key={i} className="skill-badge">{tag}</span>
-                                    ))}
-                                </div>
 
-                                <div className="project-links">
-                                    {project.demoLink && project.demoLink !== '#' && (
-                                        <a href={project.demoLink} target="_blank" rel="noopener noreferrer" className="demo-link">
-                                            Live Demo ↗
-                                        </a>
-                                    )}
-                                    {project.githubLink && project.githubLink !== '#' && (
-                                        <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="view-code-link">
-                                            View Code 📁
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-
+            {/* Experience Section */}
             <section id="experience" className="experience-section reveal">
                 <h2 className="section-title">Professional Path</h2>
                 <div className="timeline">
@@ -414,7 +421,67 @@ const projects = [
                 </div>
             </section>
 
-            <section id="contact" className="contact-section reveal">
+            {/* Contact Section */}
+            {/* Contact Section */}
+<section id="contact" className="contact-section">
+    <h2 className="section-title">Initiate Collaboration</h2>
+    <div className="contact-container">
+        <div className="contact-info">
+            <h3>Let's build something beautiful.</h3>
+            <p>I'm always open to talking about potential opportunities, full-stack developments, and code collaborations.</p>
+            <ul className="contact-details">
+                <li>✉️ marrie9642@gmail.com</li>
+                <li>📞 +92 321 7587549</li>
+                <li>📍 Lahore, Pakistan</li>
+            </ul>
+        </div>
+        
+        {/* Updated Form */}
+        <form className="contact-form" onSubmit={handleSubmit}>
+            <input 
+                type="text" 
+                name="name"
+                placeholder="Your Name" 
+                value={formData.name}
+                onChange={handleChange}
+                required 
+            />
+            <input 
+                type="email" 
+                name="email"
+                placeholder="Your Email" 
+                value={formData.email}
+                onChange={handleChange}
+                required 
+            />
+            <textarea 
+                name="message"
+                placeholder="Tell me about your project..." 
+                rows="5" 
+                value={formData.message}
+                onChange={handleChange}
+                required
+            ></textarea>
+            
+            <button type="submit" className="btn-primary" disabled={loading}>
+                {loading ? 'Sending...' : 'Send Message'}
+            </button>
+
+            {/* Success/Error Feedback UI */}
+            {status.message && (
+                <p style={{ 
+                    marginTop: '1rem', 
+                    color: status.success ? '#10B981' : '#EF4444',
+                    fontWeight: '500',
+                    textAlign: 'center' 
+                }}>
+                    {status.message}
+                </p>
+            )}
+        </form>
+    </div>
+</section>
+            {/* <section id="contact" className="contact-section">
                 <h2 className="section-title">Initiate Collaboration</h2>
                 <div className="contact-container">
                     <div className="contact-info">
@@ -426,51 +493,16 @@ const projects = [
                             <li>📍 Lahore, Pakistan</li>
                         </ul>
                     </div>
-
-                    <form className="contact-form" onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Your Name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                        />
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Your Email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            required
-                        />
-                        <textarea
-                            name="message"
-                            placeholder="Tell me about your project..."
-                            rows="5"
-                            value={formData.message}
-                            onChange={handleChange}
-                            required
-                        ></textarea>
-
-                        <button type="submit" className="btn-primary" disabled={loading}>
-                            {loading ? 'Sending...' : 'Send Message'}
-                        </button>
-
-                        {status.message && (
-                            <p style={{
-                                marginTop: '1rem',
-                                color: status.success ? '#10B981' : '#EF4444',
-                                fontWeight: '500',
-                                textAlign: 'center'
-                            }}>
-                                {status.message}
-                            </p>
-                        )}
+                    <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                        <input type="text" placeholder="Your Name" required />
+                        <input type="email" placeholder="Your Email" required />
+                        <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
+                        <button type="submit" className="btn-primary">Transmit Message</button>
                     </form>
                 </div>
-            </section>
-        
+            </section> */}
+
+            {/* Footer */}
             <footer className="footer-bar">
                 <p>© 2026 Mariam Mushtaq | Full Stack Developer</p>
             </footer>
