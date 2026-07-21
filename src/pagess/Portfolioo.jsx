@@ -137,7 +137,7 @@ export default function Portfolioo() {
         },
          {
             title: 'Meridian Luxe',
-            category: 'Frontend',
+            category: 'Full-Stack',
             tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
             description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
             demoLink: 'https://travel-frontend-nu-gilt.vercel.app/',
@@ -153,7 +153,7 @@ export default function Portfolioo() {
         },
         {
             title: 'Event Horizon',
-            category: 'Frontend',
+            category: 'Full-Stack',
             tags: ['React', 'CSS Transitions', 'Event UI', 'Express.js'],
             description: 'A dynamic dashboard streamlining event bookings, interactive vendor management, and smart ticket generation.',
             demoLink: 'https://event-horizon-frontend-oh83.vercel.app/',
@@ -341,7 +341,7 @@ export default function Portfolioo() {
             <section id="projects" className="projects-section reveal">
                 <h2 className="section-title">Selected Works</h2>
                 <div className="filter-bar">
-                    {['All', 'Full-Stack', 'Frontend', 'AI & Web'].map(category => (
+                    {['All', 'Full-Stack', 'AI & Web'].map(category => (
                         <button
                             key={category}
                             className={`filter-btn ${projectFilter === category ? 'active' : ''}`}
