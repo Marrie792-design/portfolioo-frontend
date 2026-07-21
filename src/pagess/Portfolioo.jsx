@@ -136,7 +136,7 @@ export default function Portfolioo() {
             githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom',
         },
          {
-            title: 'TravelGo',
+            title: 'Meridian Luxe',
             category: 'Frontend',
             tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
             description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
