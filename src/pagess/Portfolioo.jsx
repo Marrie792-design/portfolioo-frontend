@@ -125,7 +125,7 @@ export default function Portfolioo() {
             tags: ['React', 'Node.js', 'MongoDB', 'Authentication'],
             description: 'An e-commerce platform featuring dynamic product catalogs, secure checkout workflows, and user authentication systems.',
             demoLink: 'https://marrie-mart-fnlsk8wte-kzarlish792-7686s-projects.vercel.app/',
-            githubLink: 'https://github.com/Marrie792-design/MarrieMart', // 👈 Apna link dalein
+            githubLink: 'https://github.com/Marrie792-design/MarrieMart',
         },
         {
             title: 'Sugar Bloom',
@@ -133,7 +133,7 @@ export default function Portfolioo() {
             tags: ['React', 'Express.js', 'Node.js', 'MySQL', 'Bootstrap'],
             description: 'A responsive bakery boutique platform providing online ordering systems, interactive menus, and inventory tracking.',
             demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
-            githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom', // 👈 Apna link dalein
+            githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom',
         },
         {
             title: 'Urdu Sign Language Converter',
@@ -165,7 +165,7 @@ export default function Portfolioo() {
             tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
             description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
             demoLink: 'https://travel-frontend-seven-teal.vercel.app/',
-            githubLink: 'https://github.com/Marrie792-design/Travel-Frontend', // 👈 Apna link dalein
+            githubLink: 'https://github.com/Marrie792-design/Travel-Frontend',
         }
     ];
 
