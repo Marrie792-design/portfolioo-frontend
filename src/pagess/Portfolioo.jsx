@@ -135,13 +135,13 @@ export default function Portfolioo() {
             demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
             githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom',
         },
-        {
-            title: 'Urdu Sign Language Converter',
-            category: 'Full-Stack',
-            tags: ['React', 'Python', 'Machine Learning', 'Animations'],
-            description: 'An AI-powered tool converting sign language into real-time Urdu text and speech, bridging communication gaps.',
-            demoLink: '#',
-            githubLink: '#',
+         {
+            title: 'TravelGo',
+            category: 'Frontend',
+            tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
+            description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
+            demoLink: 'https://travel-frontend-nu-gilt.vercel.app/',
+            githubLink: 'https://github.com/Marrie792-design/Travel-Frontend',
         },
         {
             title: 'JusticeLens',
@@ -159,14 +159,16 @@ export default function Portfolioo() {
             demoLink: 'https://event-horizon-frontend-oh83.vercel.app/',
             githubLink: 'https://github.com/Marrie792-design/EventHorizon-frontend',
         },
+
         {
-            title: 'TravelGo',
-            category: 'Frontend',
-            tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
-            description: 'A polished travel discovery portal featuring smart search functionality, dynamic filters, and booking assistance.',
-            demoLink: 'https://travel-frontend-seven-teal.vercel.app/',
-            githubLink: 'https://github.com/Marrie792-design/Travel-Frontend',
-        }
+            title: 'Urdu Sign Language Converter',
+            category: 'Full-Stack',
+            tags: ['React', 'Python', 'Machine Learning', 'Animations'],
+            description: 'An AI-powered tool converting sign language into real-time Urdu text and speech, bridging communication gaps.',
+            demoLink: '#',
+            githubLink: '#',
+        },
+       
     ];
 
 
