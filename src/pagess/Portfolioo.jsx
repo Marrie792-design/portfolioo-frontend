@@ -124,7 +124,7 @@ export default function Portfolioo() {
             category: 'Full-Stack',
             tags: ['React', 'Node.js', 'MongoDB', 'Authentication'],
             description: 'An e-commerce platform featuring dynamic product catalogs, secure checkout workflows, and user authentication systems.',
-            demoLink: 'https://marrie-mart-fnlsk8wte-kzarlish792-7686s-projects.vercel.app/',
+            demoLink: 'https://marrie-mart.vercel.app/',
             githubLink: 'https://github.com/Marrie792-design/MarrieMart',
         },
         {
@@ -132,7 +132,7 @@ export default function Portfolioo() {
             category: 'Full-Stack',
             tags: ['React', 'Express.js', 'Node.js', 'MySQL', 'Bootstrap'],
             description: 'A responsive bakery boutique platform providing online ordering systems, interactive menus, and inventory tracking.',
-            demoLink: 'https://sugar-bloom-git-main-kzarlish792-7686s-projects.vercel.app/',
+            demoLink: 'https://sugar-bloom-kzarlish792-7686s-projects.vercel.app/',
             githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom',
         },
          {
