@@ -166,16 +166,16 @@ export default function Portfolioo() {
             tags: ['React', 'Vite', 'CSS3', 'Responsive Design'],
             description: 'A modern luxury fashion e-commerce platform featuring dynamic category banners, product showcases, and interactive hero sections.',
             demoLink: 'https://mimi-atelier-frontend.vercel.app/',
-            githubLink: '#',
+            githubLink: 'https://github.com/Marrie792-design/MIMI-ATELIER-frontend',
         },
-        
+
         {
             title: 'Maison de Fleur',
             category: 'Frontend',
             tags: ['React', 'GSAP', 'ScrollTrigger', 'Tailwind CSS'],
             description: 'An immersive luxury e-commerce platform featuring a scroll-driven slow-motion video hero section and reactive cart state management.',
             demoLink: 'https://maison-de-fleur-frontend.vercel.app/',
-            githubLink: '#',
+            githubLink: 'https://github.com/Marrie792-design/Maison-de-Fleur-Frontend',
         },
 
         {
