@@ -135,7 +135,7 @@ export default function Portfolioo() {
             demoLink: 'https://sugar-bloom-kzarlish792-7686s-projects.vercel.app/',
             githubLink: 'https://github.com/Marrie792-design/Sugar-Bloom',
         },
-         {
+        {
             title: 'Meridian Luxe',
             category: 'Full-Stack',
             tags: ['React', 'API Integration', 'UI UX', 'Express.js'],
@@ -149,7 +149,7 @@ export default function Portfolioo() {
             tags: ['React', 'AI Model', 'Express.js', 'Legal Tech'],
             description: 'An AI-assisted portal analyzing legal cases, rendering structured legal summaries, and streamlining workflows.',
             demoLink: 'https://justice-lens-frontend.vercel.app/',
-            githubLink: 'https://github.com/Marrie792-design/JusticeLens-frontend', 
+            githubLink: 'https://github.com/Marrie792-design/JusticeLens-frontend',
         },
         {
             title: 'Event Horizon',
@@ -161,6 +161,24 @@ export default function Portfolioo() {
         },
 
         {
+            title: 'Mimi Atelier',
+            category: 'Frontend',
+            tags: ['React', 'Vite', 'CSS3', 'Responsive Design'],
+            description: 'A modern luxury fashion e-commerce platform featuring dynamic category banners, product showcases, and interactive hero sections.',
+            demoLink: 'https://mimi-atelier-frontend.vercel.app/',
+            githubLink: '#',
+        },
+        
+        {
+            title: 'Maison de Fleur',
+            category: 'Frontend',
+            tags: ['React', 'GSAP', 'ScrollTrigger', 'Tailwind CSS'],
+            description: 'An immersive luxury e-commerce platform featuring a scroll-driven slow-motion video hero section and reactive cart state management.',
+            demoLink: 'https://maison-de-fleur-frontend.vercel.app/',
+            githubLink: '#',
+        },
+
+        {
             title: 'Urdu Sign Language Converter',
             category: 'Full-Stack',
             tags: ['React', 'Python', 'Machine Learning', 'Animations'],
@@ -168,7 +186,7 @@ export default function Portfolioo() {
             demoLink: '#',
             githubLink: '#',
         },
-       
+
     ];
 
 
